@@ -35,6 +35,7 @@ const registro = require('./sistemas/registro.js')
 const modulos = require('./sistemas/modulos.js')
 const detector = require('./detector.js')
 const qrcodeTerminal = require('qrcode-terminal')
+const hospedagem = require('./sistemas/hospedagem.js')
 const dadosSistema = require('./sistemas/dados.js')
 const controleRemoto = require('./sistemas/controle.js')
 const avisosOficiais = require('./sistemas/avisos.js')
@@ -54,8 +55,52 @@ const qrcode = runtimeSub.sessionDir
 const grupos = runtimeSub.groupsDir
 const logger = pino({ level: 'silent' })
 
-const rl = runtimeSub.isSubBot ? null : readline.createInterface({ input: process.stdin, output: process.stdout })
-const question = text => (runtimeSub.isSubBot ? Promise.resolve('') : new Promise(resolve => rl.question(text, resolve)))
+// ============================================================
+// AMBIENTE DE HOSPEDAGEM (AquaCloud / VPS / PM2 / Docker)
+// TOKITO_HOSTED=true força o modo hospedagem. Sem a variável,
+// qualquer processo sem terminal interativo (TTY) também entra
+// no modo hospedagem (fallback seguro contra "readline was
+// closed"). Em terminal local do Windows o menu interativo
+// original continua sendo usado.
+// ============================================================
+const ambienteHosted = hospedagem.detectarAmbiente()
+
+// O readline só é criado quando existe um terminal interativo real.
+// Nos Sub Bots ele nunca foi criado (comportamento original preservado).
+let rl = null
+if (!runtimeSub.isSubBot && !ambienteHosted) {
+try {
+rl = readline.createInterface({ input: process.stdin, output: process.stdout })
+rl.once('close', () => {
+// Terminal encerrado durante a execução: deixa de aceitar perguntas.
+rl = null
+})
+} catch {
+rl = null
+}
+}
+
+// Existe terminal interativo para perguntas ao usuário?
+const podePerguntar = () => Boolean(rl) && !runtimeSub.isSubBot
+
+const question = text => {
+if (runtimeSub.isSubBot) return Promise.resolve('')
+if (!rl) return Promise.reject(new Error('Entrada interativa indisponível: este ambiente não possui terminal (TTY).'))
+return new Promise((resolve, reject) => {
+const interfaceAtual = rl
+const aoFechar = () => reject(new Error('readline was closed'))
+interfaceAtual.once('close', aoFechar)
+try {
+interfaceAtual.question(text, resposta => {
+interfaceAtual.removeListener('close', aoFechar)
+resolve(resposta)
+})
+} catch (error) {
+interfaceAtual.removeListener('close', aoFechar)
+reject(error)
+}
+})
+}
 
 const msgRetryCounterCache = new NodeCache()
 const fotos = new NodeCache({ stdTTL: 1800, checkperiod: 60 })
@@ -453,6 +498,12 @@ global.__TOKITO_UPDATE_NOTICE_TIMER__.unref?.()
 }
 
 async function startPairing(tokito) {
+// Sem terminal interativo não é possível pedir o número ao usuário.
+// Na hospedagem o fluxo padrão é o QR-Code (definido em iniciarTokito).
+if (!runtimeSub.isSubBot && !podePerguntar()) {
+erro('Conexão por código indisponível sem terminal interativo. Usando conexão por QR-Code.')
+return
+}
 const phoneNumber = runtimeSub.isSubBot ? String(process.env.TOKITO_SUB_NUMBER || runtimeSub.id || '') : await question(colors.white('╰━━➤ Digite o número com DDI: '))
 const numerosColetados = collectNumbers(phoneNumber)
 if (!numerosColetados || numerosColetados.length < 11) {
@@ -654,6 +705,15 @@ console.log(colors.gray('Você pode obter ou renovar seu acesso em https://tokit
 async function prepararAcesso() {
 recarregarConfigBot()
 if (!tokenValido(API_KEY_TOKITO)) {
+// Sem terminal interativo não existe "cole seu token aqui".
+// A validação continua ativa: sem token válido o bot não inicia.
+if (!podePerguntar()) {
+return {
+allowed: false,
+code: 'TOKEN_AUSENTE',
+message: 'Nenhum Token Tokito válido encontrado. Configure o campo API_KEY_TOKITO em DADOS_TOKITO/INFO_DADOS/config-all.json antes de iniciar na hospedagem.'
+}
+}
 return solicitarToken()
 }
 info('Verificando acesso ao Tokito Bot V10...')
@@ -668,6 +728,8 @@ erro(acesso.message || 'O token salvo não possui um plano ativo.')
 const config = lerConfigBot()
 config.API_KEY_TOKITO = ''
 salvarConfigBot(config)
+// Sem terminal: devolve a recusa da validação para o iniciarTokito encerrar.
+if (!podePerguntar()) return acesso
 return solicitarToken()
 }
 return acesso
@@ -713,6 +775,24 @@ return creds?.registered === true
 } catch {
 return false
 }
+}
+
+// ============================================================
+// INICIALIZAÇÃO SEM MENU INTERATIVO (hospedagem / sem TTY)
+// Sem sessão válida inicia o fluxo de conexão por QR-Code.
+// Com sessão válida conecta normalmente, sem novo pareamento.
+// O menu interativo original continua intacto no Windows local.
+// ============================================================
+const iniciarSemMenu = () => {
+recarregarConfigBot()
+if (sessaoRegistrada()) {
+metodo = null
+info('Sessão do WhatsApp encontrada. Iniciando normalmente, sem novo pareamento.')
+} else {
+metodo = 'qr'
+aviso('Nenhuma sessão do WhatsApp encontrada. Iniciando a conexão por QR-Code.')
+}
+return metodo
 }
 
 /*
@@ -1217,6 +1297,16 @@ info('Escaneie o QR-Code abaixo para conectar.')
 console.log('')
 qrcodeTerminal.generate(qr, { small: true })
 console.log('')
+// Na hospedagem o QR também é salvo em arquivo (texto + PNG),
+// para não depender apenas da impressão no terminal.
+if (ambienteHosted && !runtimeSub.isSubBot) {
+const arquivosQr = hospedagem.salvarQr(qr)
+if (arquivosQr.ok) {
+info('QR-Code salvo para a hospedagem: ' + arquivosQr.texto + (arquivosQr.imagem ? ' | ' + arquivosQr.imagem : ''))
+} else {
+aviso('Não foi possível salvar o QR-Code da hospedagem.')
+}
+}
 }
 }
 const shouldReconnect = lastDisconnect?.error ? new Boom(lastDisconnect.error).output.statusCode : 0
@@ -1230,6 +1320,8 @@ global.startTime = Math.floor(Date.now() / 1000)
 if (!runtimeSub.isSubBot) {
   iniciarAvisosUpdate(tokito)
   avisosPlanoSite.iniciar(tokito)
+  // Conectado: remove o QR-Code temporário da hospedagem.
+  hospedagem.limparQr()
 }
 avisosOficiais.iniciar(tokito)
 reconectando = false
@@ -1397,7 +1489,26 @@ erro(`Não foi possível liberar o acesso: ${acesso?.message || acesso?.code || 
 process.exit(24)
 return
 }
-if (!sessaoRegistrada() || process.argv.includes('painel')) await showMenu()
+// Na hospedagem não existe menu interativo: qualquer QR antigo é descartado
+// e um novo será gerado pelo fluxo de conexão, se não houver sessão.
+if (ambienteHosted) hospedagem.limparQr()
+if (!sessaoRegistrada() || process.argv.includes('painel')) {
+if (podePerguntar()) {
+try {
+await showMenu()
+} catch (error) {
+// Terminal encerrado no meio do menu: cai para o fluxo automático
+// em vez de morrer com "readline was closed".
+aviso('Menu interativo indisponível (' + (error?.message || error) + '). Seguindo sem o menu.')
+iniciarSemMenu()
+}
+} else {
+iniciarSemMenu()
+}
+} else {
+// Sessão válida: conecta direto, sem menu e sem novo pareamento.
+info('Sessão do WhatsApp encontrada. Iniciando normalmente, sem novo pareamento.')
+}
 controleRemoto.start()
 placar.ciclo(resultado => {
 if (!resultado?.definitive) return
