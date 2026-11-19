@@ -2,3 +2,32 @@
 .env.*
 !.env.example
 .work/
+
+# ------------------------------------------------------------
+# Sessões e credenciais do WhatsApp — NUNCA versionar.
+# (creds.json, pre-keys, sender-keys, identity-keys, sessions etc.)
+# ------------------------------------------------------------
+creds.json
+instancia.lock
+instancia.lock.*.tmp
+
+# Pastas de sessão completas
+DADOS_TOKITO/database/qrcode/*
+!DADOS_TOKITO/database/qrcode/.gitkeep
+DADOS_TOKITO/database/detector/
+# Cada Sub Bot tem sua própria pasta (sessão, grupos, configs)
+DADOS_TOKITO/database/subs/*/
+
+# Arquivos privados de sessão em qualquer pasta do bot
+DADOS_TOKITO/**/pre-key-*
+DADOS_TOKITO/**/sender-key-*
+DADOS_TOKITO/**/sender-key-memory-*
+DADOS_TOKITO/**/identity-key-*
+DADOS_TOKITO/**/session-*
+DADOS_TOKITO/**/app-state-sync-*
+DADOS_TOKITO/**/device-list-*
+DADOS_TOKITO/**/lid-mapping-*
+DADOS_TOKITO/**/tctoken-*
+
+# Backups locais de correção
+DADOS_TOKITO/BACKUPS/

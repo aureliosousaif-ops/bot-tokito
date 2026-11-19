@@ -49,6 +49,9 @@ const promocoes = require('./sistemas/promocoes.js')
 const placar = require('./database/lib/placar.js')
 const runtimeSub = require('./sub/runtime.js')
 const sistemaSub = runtimeSub.isSubBot ? null : require('./sub/index.js')
+const instanciaLock = require('./database/lib/instancia-lock.js')
+const conexaoSegura = require('./database/lib/conexao-segura.js')
+const sessaoWhats = require('./database/lib/sessao-whatsapp.js')
 
 const CONFIG_FILE = path.join(__dirname, 'INFO_DADOS', 'config-all.json')
 const qrcode = runtimeSub.sessionDir
@@ -183,6 +186,19 @@ let { NomeDoBot, ownerName, prefix, channel, channeldl, ownerNumber, CREDENTIALS
 let iniciando = false, reconectando = false, metodo = null, ultimoQr = null, processarMsg = null
 let socketAtual = null
 let primeiraConexaoSub = false
+// 440 (sessão substituída): pausa a reconexão automática até reinício manual.
+let sessaoSubstituida = false
+// Falhas consecutivas de INICIAÇÃO (catch do startConnect). Quedas normais de
+// rede não passam por aqui: elas chegam pelo handler 'close' sem limite.
+let falhasIniciacao = 0
+const MAX_FALHAS_INICIACAO = 5
+// Único mecanismo de agendamento de reconexão: um timer por vez, nunca dois
+// sockets principais concorrentes.
+const agendadorReconexao = conexaoSegura.criarAgendadorReconexao(() => {
+  reconectando = false
+  iniciando = false
+  startConnect()
+})
 
 // A mensagem IPC só pode ser enviada enquanto o canal com o bot principal existir.
 const enviarAoPai = mensagem => {
@@ -766,16 +782,7 @@ erro('Opção inválida. Escolha 1, 2, 3 ou 4.')
 return showMenu()
 }
 
-const sessaoRegistrada = () => {
-try {
-const credsFile = path.join(qrcode, 'creds.json')
-if (!fs.existsSync(credsFile)) return false
-const creds = JSON.parse(fs.readFileSync(credsFile, 'utf8'))
-return creds?.registered === true
-} catch {
-return false
-}
-}
+const sessaoRegistrada = () => sessaoWhats.sessaoRegistrada(qrcode)
 
 // ============================================================
 // INICIALIZAÇÃO SEM MENU INTERATIVO (hospedagem / sem TTY)
@@ -800,6 +807,12 @@ return metodo
  */
 
 async function startConnect() {
+// Sessão substituída (440): não tenta reconectar sozinho. Isso evita o loop
+// de "tempestade de logins" e impede dois sockets concorrentes na mesma sessão.
+if (sessaoSubstituida) {
+  aviso('Conexão pausada: a sessão foi substituída por outra instância. Encerre a outra instância e reinicie o Tokito para reconectar.')
+  return
+}
 if (iniciando) return
 iniciando = true
 try {
@@ -1325,6 +1338,10 @@ if (!runtimeSub.isSubBot) {
 }
 avisosOficiais.iniciar(tokito)
 reconectando = false
+// Conexão restabelecida: zera o contador de falhas de início e cancela
+// qualquer reconexão pendente (só pode existir um timer, gerido acima).
+falhasIniciacao = 0
+agendadorReconexao.cancelar()
 metodo = null
 ultimoQr = null
 global.qrTokitoAtual = null
@@ -1395,48 +1412,48 @@ console.log('')
 await sistemaSub?.iniciar(tokito).catch(error => erroSistema('Erro ao iniciar sistema de Sub Bots', error))
 }
 break
-case 'close':
+case 'close': {
 avisosOficiais.pausar(tokito)
 if (global.__TOKITO_UPDATE_SOCKET__ === tokito) global.__TOKITO_UPDATE_SOCKET__ = null
-// 440 indica sessão substituída. Repetir conexão aqui só causa tempestade de logins.
-if (runtimeSub.isSubBot && shouldReconnect === 440) {
-erro('Sub Bot desconectado: sessão substituída (440). Verifique se existe outra instância com o mesmo número.')
-enviarAoPai({ type: 'conflict', number: runtimeSub.id })
-setTimeout(() => process.exit(0), 300)
+const plano = conexaoSegura.planoDeFechamento({
+  codigo: shouldReconnect,
+  subBot: runtimeSub.isSubBot,
+  sessaoNaoRegistrada: !state.creds.registered
+})
+if (runtimeSub.isSubBot && plano.acao !== 'sub-conflict') {
+  enviarAoPai({ type: 'reconnecting', number: runtimeSub.id, code: shouldReconnect })
+}
+if (plano.acao === 'sub-conflict') {
+  // Sub Bot: avisa o pai e encerra; o bot principal é quem decide o próximo passo.
+  erro(plano.mensagem)
+  enviarAoPai({ type: 'conflict', number: runtimeSub.id })
+  setTimeout(() => process.exit(0), 300)
+  break
+}
+if (plano.acao === 'pausar-substituida') {
+  // 440 no bot principal: NÃO reconectar. Outra instância está com a sessão.
+  sessaoSubstituida = true
+  reconectando = false
+  agendadorReconexao.cancelar()
+  erro(plano.mensagem)
+  aviso('Reconexão automática suspensa para evitar um loop de 440.')
+  aviso('Encerre a outra instância que está usando esta sessão e reinicie o Tokito (reinicialização controlada) para voltar a conectar.')
+  break
+}
+if (plano.acao === 'logout') {
+  erro(plano.mensagem)
+  if (runtimeSub.isSubBot) enviarAoPai({ type: 'logged-out', number: runtimeSub.id })
+  process.exit(0)
+}
+if (plano.acao === 'retry') {
+  // Timer único: se já existe uma reconexão agendada, não agenda outra.
+  if (reconectando || agendadorReconexao.ativo()) break
+  reconectando = true
+  aviso(plano.mensagem)
+  agendadorReconexao.agendar(plano.atrasoMs)
+}
 break
 }
-if (runtimeSub.isSubBot) {
-enviarAoPai({ type: 'reconnecting', number: runtimeSub.id, code: shouldReconnect })
-}
-// Durante o primeiro pareamento do Sub Bot ainda não existe uma sessão registrada.
-// Alguns fechamentos transitórios chegam como 401; eles não devem ser tratados como logout definitivo.
-if (runtimeSub.isSubBot && !state.creds.registered) {
-aviso(`Conexão inicial do Sub Bot fechada. Aguardando novo handshake. Código: ${shouldReconnect}`)
-if (!reconectando) {
-reconectando = true
-setTimeout(() => {
-reconectando = false
-iniciando = false
-startConnect()
-}, 2500)
-}
-break
-}
-if (shouldReconnect === DisconnectReason.loggedOut || shouldReconnect === 401) {
-erro('Sessão encerrada. Apague a pasta qrcode e conecte novamente.')
-if (runtimeSub.isSubBot) enviarAoPai({ type: 'logged-out', number: runtimeSub.id })
-process.exit(0)
-}
-if (!reconectando) {
-reconectando = true
-aviso(`Conexão fechada. Reconectando em 5 segundos. Código: ${shouldReconnect}`)
-setTimeout(() => {
-reconectando = false
-iniciando = false
-startConnect()
-}, 5000)
-}
-break
 }
 }
 /*
@@ -1465,11 +1482,17 @@ if (events['creds.update']) await saveCreds()
 iniciando = false
 } catch (error) {
 erroSistema('Ocorreu um erro ao iniciar a conexão', error)
-aviso('Tentando iniciar novamente em 5 segundos...')
-setTimeout(() => {
-iniciando = false
-startConnect()
-}, 5000)
+if (sessaoSubstituida) return
+falhasIniciacao += 1
+if (falhasIniciacao >= MAX_FALHAS_INICIACAO) {
+  erro(`Falha ao iniciar a conexão ${falhasIniciacao} vezes seguidas. Reconexão automática suspensa até uma reinicialização manual.`)
+  return
+}
+// Mesmo mecanismo de timer usado no handler 'close': nunca dois timers
+// de reconexão ao mesmo tempo.
+reconectando = true
+aviso(`Tentando iniciar novamente em 5 segundos... (tentativa ${falhasIniciacao} de ${MAX_FALHAS_INICIACAO})`)
+agendadorReconexao.agendar(5000)
 }
 }
 
@@ -1483,6 +1506,17 @@ metodo = sessaoRegistrada() ? null : 'codigo'
 startConnect()
 return
 }
+// Lock de instância única: impede que uma segunda instância principal abra a
+// MESMA sessão do WhatsApp (causa raiz do erro 440 em loop).
+const lock = instanciaLock.adquirir(qrcode)
+if (!lock.adquirido) {
+erro(`Já existe uma instância do Tokito em execução nesta sessão (PID ${lock.pid || 'desconhecido'}). Encerre-a antes de iniciar outra.`)
+aviso('Segunda instância bloqueada. Encerrando com código 23 (instância já em execução).')
+process.exit(23)
+return
+}
+if (lock.degradado) aviso(`Lock de instância única indisponível (${lock.motivo}). Seguindo sem a proteção de instância única.`)
+instanciaLock.registrarSaida(qrcode)
 const acesso = await prepararAcesso()
 if (!acesso?.allowed) {
 erro(`Não foi possível liberar o acesso: ${acesso?.message || acesso?.code || 'validação indisponível'}`)
