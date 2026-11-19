@@ -1,0 +1,43 @@
+{
+  "installationId": "tki_OnECLiqUbw2xJ86ehJJyHwJN",
+  "createdAt": "2026-11-02T15:23:46.467Z",
+  "lastServerStatus": "online",
+  "lastLicenseCode": "AUTHORIZED",
+  "lastLicenseError": "getaddrinfo ENOTFOUND tokito-apis.com.br",
+  "lastSyncAttemptAt": "2026-11-16T18:00:44.593Z",
+  "license": {
+    "payload": "eyJpc3N1ZXIiOiJUb2tpdG8gQVBJcyIsImJvdCI6InRva2l0by12MTAiLCJ1c2VySWQiOiJ1c3JfMzA5OGEwMGYtNTFjYS00YmRhLTlhM2EtYWM3ZWJhMmE2ZjczIiwiaW5zdGFsbGF0aW9uSWQiOiJ0a2lfT25FQ0xpcVVidzJ4Sjg2ZWhKSnlId0pOIiwidG9rZW5IYXNoIjoiMjE3ZTRkNTM1ZjM2NmVhYjRmY2QwMjRjMjM4ZTdkZmM3OThjMjczYTk4YzhjZjQ5NWNlNWEyMDNjZGJjY2MyZCIsInBsYW5JZCI6InN0YXJ0IiwicGxhbk5hbWUiOiJCw6FzaWNvIiwiaXNzdWVkQXQiOiIyMDI2LTExLTE5VDAxOjI0OjI0LjE0OVoiLCJvZmZsaW5lVW50aWwiOiIyMDI2LTExLTE5VDA3OjI0OjI0LjE0OVoiLCJwbGFuRXhwaXJlc0F0IjoiMjAyNi0xMi0wM1QyMzo1NTo0Ny43MzlaIiwibGljZW5zZVZlcnNpb24iOjF9",
+    "signature": "BJ3EQ_woJy-hJZq9lxBT95oDt3yNAzsLCF0m1vAu2n6aMqLZsiaSWHRpifpf8-QGfvxxS0gV9fuKUYAg_WPAAw"
+  },
+  "lastSyncAt": "2026-11-19T01:24:23.918Z",
+  "plan": {
+    "id": "start",
+    "nome": "Básico",
+    "expiresAt": "2026-12-03T23:55:47.739Z"
+  },
+  "lastNotifiedPrincipalVersion": "10.3.37",
+  "lastNotifiedPrincipalJid": "556399215379@s.whatsapp.net",
+  "lastNotifiedPrincipalAttempts": 4,
+  "lastNotifiedVersion": "10.3.37",
+  "lastNotifiedAt": "2026-11-18T18:27:24.875Z",
+  "lastBackup": "C:\\Users\\kitiz\\Documents\\Tokitobot-V10-main\\DADOS_TOKITO\\database\\sistemas\\backup-update\\partial-1795040623115",
+  "lastBackupType": "incremental",
+  "lastUpdateAt": "2026-11-18T22:23:43.183Z",
+  "previousVersion": "10.3.31",
+  "installedVersion": "10.3.37",
+  "addedByLastUpdate": [
+    "DADOS_TOKITO/sistemas/planos-site.js",
+    "DADOS_TOKITO/plugins/aluguel/planosite.js"
+  ],
+  "lastUpdatedFiles": [
+    "DADOS_TOKITO/sistemas/planos-site.js",
+    "DADOS_TOKITO/mensagens/mensagens.js",
+    "DADOS_TOKITO/plugins/aluguel/planosite.js",
+    "DADOS_TOKITO/connect.js",
+    "DADOS_TOKITO/plugins/aluguel/plans.js",
+    "DADOS_TOKITO/sub/ui.js",
+    "package.json",
+    "tokito.js"
+  ],
+  "lastDeletedFiles": []
+}

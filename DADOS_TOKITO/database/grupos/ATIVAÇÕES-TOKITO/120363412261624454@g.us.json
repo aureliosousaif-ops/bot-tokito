@@ -1,0 +1,128 @@
+[
+  {
+    "name": "Teste bot",
+    "groupId": "120363412261624454@g.us",
+    "funcoes": {
+      "aprovacao": false,
+      "autoaprovacao": false,
+      "antilink": {
+        "ativo": false,
+        "nivel": null
+      },
+      "x9": false,
+      "antipay": false,
+      "antibot": false,
+      "antivideo": false,
+      "antifoto": false,
+      "antivisu": false,
+      "antisticker": false,
+      "antifloodsticker": false,
+      "anticontato": false,
+      "antilocalizacao": false,
+      "antidocumento": false,
+      "antiaudio": false,
+      "antispam": false,
+      "antistatus": true,
+      "antimarcacao": false,
+      "antifake": false,
+      "antirroubo": false,
+      "anticanal": false,
+      "soadm": false,
+      "registrar": false,
+      "passaporte": false,
+      "modorpg": false,
+      "modocoins": false,
+      "multiprefix": false,
+      "prefixGrupo": null,
+      "autodl": false,
+      "autosticker": false,
+      "autortext": false,
+      "antinotas": false,
+      "antipalavra": false,
+      "palavrasProibidas": [],
+      "bangp": false,
+      "modoia": {
+        "ativo": false,
+        "tipo": "texto"
+      },
+      "antiddd": {
+        "ativo": false,
+        "listaProibidos": []
+      },
+      "modojogos": true,
+      "modofreefire": false
+    },
+    "listanegra": [],
+    "ausentes": [],
+    "advertencias": {},
+    "silenciados": [],
+    "atividades": {
+      "556399215379@s.whatsapp.net": {
+        "total": 39,
+        "comandos": 36,
+        "figus": 0,
+        "imagens": 0,
+        "videos": 0,
+        "audios": 0,
+        "documentos": 0,
+        "ultima": 1793726060095
+      },
+      "556391073145@s.whatsapp.net": {
+        "total": 4,
+        "comandos": 0,
+        "figus": 0,
+        "imagens": 0,
+        "videos": 0,
+        "audios": 0,
+        "documentos": 0,
+        "ultima": 1793725938640
+      }
+    },
+    "economia": {
+      "usuarios": {}
+    },
+    "rpg": {
+      "usuarios": {}
+    },
+    "namoro": {
+      "pedidos": [],
+      "casais": []
+    },
+    "casamento": {
+      "pedidos": [],
+      "casais": []
+    },
+    "jogos": true,
+    "wellcome": [
+      {
+        "bemvindo1": false,
+        "legendabv": "「🧊」 #numero#\n- *🧊 | ᴜᴍ ɴᴏᴠᴏ ᴍᴇᴍʙʀᴏ ᴇɴᴛʀᴏᴜ ɴᴏ ɢʀᴜᴘᴏ #nomegrupo#…* ↴\n\n*ꜱᴇᴊᴀ ᴍᴜɪᴛᴏ ʙᴇᴍ-ᴠɪɴᴅᴏ(ᴀ), #numero#!* 💙\n\n*ᴇ́ ᴜᴍᴀ ɢʀᴀɴᴅᴇ ᴀʟᴇɢʀɪᴀ ᴛᴇʀ ᴠᴏᴄᴇ̂ ᴄᴏɴᴏꜱᴄᴏ. ᴀɢᴏʀᴀ ᴏ ɢʀᴜᴘᴏ #nomegrupo# ᴄᴏɴᴛᴀ ᴄᴏᴍ #membros# ᴍᴇᴍʙʀᴏꜱ.*\n\n*ᴇꜱᴘᴇʀᴀᴍᴏꜱ ǫᴜᴇ ᴠᴏᴄᴇ̂ ꜱᴇ ᴅɪᴠɪʀᴛᴀ, ꜰᴀᴄ̧ᴀ ɴᴏᴠᴀꜱ ᴀᴍɪᴢᴀᴅᴇꜱ ᴇ ᴀᴘʀᴏᴠᴇɪᴛᴇ ʙᴀꜱᴛᴀɴᴛᴇ ꜱᴜᴀ ᴇꜱᴛᴀᴅɪᴀ ᴀǫᴜɪ.* ✨\n\n> *🧊 | ʟᴇɪᴀ ᴀꜱ ʀᴇɢʀᴀꜱ, ʀᴇꜱᴘᴇɪᴛᴇ ᴛᴏᴅᴏꜱ ᴇ ᴜꜱᴇ #prefixo#menu ᴘᴀʀᴀ ᴠᴇʀ ᴏꜱ ᴄᴏᴍᴀɴᴅᴏꜱ.*",
+        "legendasaiu": "「🧊」 #numero#\n- *🧊 | ᴜᴍ ᴍᴇᴍʙʀᴏ ꜱᴀɪᴜ ᴅᴏ ɢʀᴜᴘᴏ #nomegrupo#…* ↴\n\n*#numero# ɴᴀ̃ᴏ ꜰᴀᴢ ᴍᴀɪꜱ ᴘᴀʀᴛᴇ ᴅᴏ ɢʀᴜᴘᴏ.*\n\n*ᴀɢᴏʀᴀ ᴏ ɢʀᴜᴘᴏ #nomegrupo# ᴄᴏɴᴛᴀ ᴄᴏᴍ #membros# ᴍᴇᴍʙʀᴏꜱ.*\n\n*ᴀɢʀᴀᴅᴇᴄᴇᴍᴏꜱ ᴘᴇʟᴏ ᴛᴇᴍᴘᴏ ǫᴜᴇ ᴠᴏᴄᴇ̂ ᴘᴀꜱꜱᴏᴜ ᴄᴏɴᴏꜱᴄᴏ ᴇ ᴅᴇꜱᴇᴊᴀᴍᴏꜱ ᴛᴜᴅᴏ ᴅᴇ ʙᴏᴍ ᴘᴀʀᴀ ᴠᴏᴄᴇ̂.* 💙",
+        "fundobv": null,
+        "fundobv_tipo": null,
+        "fundosaiu": null,
+        "fundosaiu_tipo": null
+      },
+      {
+        "bemvindo2": false,
+        "legendabv2": "「🧊」 #numero#\n\n*ꜱᴇᴊᴀ ʙᴇᴍ-ᴠɪɴᴅᴏ(ᴀ) ᴀᴏ ɢʀᴜᴘᴏ #nomegrupo#!*\n\n> *ᴀɢᴏʀᴀ ꜱᴏᴍᴏꜱ #membros# ᴍᴇᴍʙʀᴏꜱ. 💙*",
+        "legendasaiu2": "「🧊」 #numero#\n\n*ᴏ ᴜꜱᴜᴀ́ʀɪᴏ ꜱᴀɪᴜ ᴅᴏ ɢʀᴜᴘᴏ #nomegrupo#.*\n\n> *ᴀɢᴏʀᴀ ꜱᴏᴍᴏꜱ #membros# ᴍᴇᴍʙʀᴏꜱ.*"
+      },
+      {
+        "bemvindo3": false,
+        "legendabv3": "「🧊」 #numero#\n\n*ʙᴇᴍ-ᴠɪɴᴅᴏ(ᴀ) ᴀᴏ #nomegrupo#!*\n\n> *ᴜꜱᴇ #prefixo#menu ᴘᴀʀᴀ ᴠᴇʀ ᴍᴇᴜꜱ ᴄᴏᴍᴀɴᴅᴏꜱ.*",
+        "legendasaiu3": "「🧊」 #numero#\n\n*ᴀᴛᴇ́ ᴍᴀɪꜱ! ᴏ ɢʀᴜᴘᴏ #nomegrupo# ꜰɪᴄᴀ ᴄᴏᴍ #membros# ᴍᴇᴍʙʀᴏꜱ.*"
+      },
+      {
+        "bemvindo4": false,
+        "stickerbv": null,
+        "stickersaiu": null
+      },
+      {
+        "bemvindo5": false,
+        "audiobv": null,
+        "audiosaiu": null
+      }
+    ]
+  }
+]

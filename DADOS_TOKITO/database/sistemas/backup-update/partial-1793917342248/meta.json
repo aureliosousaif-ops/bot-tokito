@@ -1,0 +1,330 @@
+{
+  "createdAt": "2026-11-05T22:22:22.402Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/addddd.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/delddd.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/listddd.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/base.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/_novas_rotas.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/base.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/lista-sala.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/sala-lista.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/magia/base.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/sub/00-cadastro.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/adv.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/hierarquia.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "tests/adv.test.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/mensagens.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/menus.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/add-ddd.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/del-ddd.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/list-ddd.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/baiana.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/baiano.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/bebado.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/beta.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/carioca.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/corno.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/feio.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/fiel.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/fumar.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/gado.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/gay.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/gostosa.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/gostoso.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/linda.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/lindo.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/louca.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/louco.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/macaca.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/macaco.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/nazista.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/porcentagem.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/puta.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/safada.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/safado.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/sigma.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/brincadeiras/vesgo.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/animesearch.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/appstore.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/lyrics.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/mangasearch.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/printsite.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/soundcloudsearch.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/spotifysearch.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/utilitarios.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/wikipedia.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/evento-lista.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/ffcore.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/likes.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/listasala.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/listsala.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/modox4.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/salas.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/magia/arcana.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/sub/cadastroevento.js",
+      "existed": false,
+      "directory": false
+    }
+  ]
+}

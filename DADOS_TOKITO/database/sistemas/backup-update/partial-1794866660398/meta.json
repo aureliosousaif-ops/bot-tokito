@@ -1,0 +1,100 @@
+{
+  "createdAt": "2026-11-16T22:04:20.450Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/playcall.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/menus.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antilink.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/mensagens.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/antilinkconfig.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/dono/update.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/parcerias.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/parceria.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/funcoes.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/anticanal.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/parceria/gerenciar.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/parceria/parceria.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/parceria/solicitacoes.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "tokito.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/tiktoksearch.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/scrapers/downloads/tiktoksearch.js",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

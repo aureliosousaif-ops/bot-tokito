@@ -1,0 +1,55 @@
+{
+  "createdAt": "2026-11-13T23:20:41.981Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/figurinhas/qc.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/menus.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/ia/index.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/modoia.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/ia/iaaudio.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/ia/tokito-ia.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/controle-remoto.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

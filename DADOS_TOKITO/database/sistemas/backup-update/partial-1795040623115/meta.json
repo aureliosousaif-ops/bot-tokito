@@ -1,0 +1,50 @@
+{
+  "createdAt": "2026-11-18T22:23:43.165Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/planos-site.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/mensagens.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/aluguel/planosite.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/aluguel/plans.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sub/ui.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "tokito.js",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

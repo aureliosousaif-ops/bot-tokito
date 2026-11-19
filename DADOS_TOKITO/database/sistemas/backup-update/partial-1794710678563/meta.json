@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-11-15T02:44:38.580Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/dados.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

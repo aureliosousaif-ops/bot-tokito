@@ -1,0 +1,80 @@
+{
+  "createdAt": "2026-11-10T17:27:00.437Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/sala-grupo.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/scrapers/downloads/tiktok_gif.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/menus.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/tiktok_gif.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/downloads/instagram.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/ffcore.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/evento-sala-monitor.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/freefire/salas.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/mensagens.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/ia/index.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/modoia.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/ia/iaaudio.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/ia/tokito-ia.js",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

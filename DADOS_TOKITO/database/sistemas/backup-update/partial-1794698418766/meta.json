@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-11-14T23:20:18.785Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "tests/adv.test.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "tests/remote-control.test.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

@@ -1,0 +1,210 @@
+{
+  "createdAt": "2026-11-04T22:53:55.147Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-viewoncex9.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antiaudio.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antibot.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-anticanal.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-anticontato.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antidocumento.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antifoto.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antilink.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antilocalizacao.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antimarcacao.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antispam.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antistatus.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antisticker.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antivideo.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/filtro-antivisu.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/open.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "package.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "README.md",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/connect.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/database/lib/deps.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/mensagens/mensagens.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/ativar.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/admin/viewoncex9.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/funcoes.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/toggle.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antiaudio.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antibot.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/anticanal.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/anticontato.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antidocumento.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antifoto.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antilink.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antilocalizacao.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antimarcacao.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antispam.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antistatus.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antisticker.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antivideo.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/antivisu.js",
+      "existed": false,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/sistemas/filtros/viewoncex9.js",
+      "existed": false,
+      "directory": false
+    }
+  ]
+}

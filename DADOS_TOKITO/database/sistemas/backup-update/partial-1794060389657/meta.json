@@ -1,0 +1,20 @@
+{
+  "createdAt": "2026-11-07T14:06:29.789Z",
+  "entries": [
+    {
+      "path": "DADOS_TOKITO/INFO_DADOS/update.json",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/dono/fundoping.js",
+      "existed": true,
+      "directory": false
+    },
+    {
+      "path": "DADOS_TOKITO/plugins/info/ping.js",
+      "existed": true,
+      "directory": false
+    }
+  ]
+}

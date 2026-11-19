@@ -1,0 +1,27 @@
+[
+  {
+    "id": "120363412261624454@g.us",
+    "ativo": true,
+    "planoNome": "Manual",
+    "duracaoDias": 31,
+    "inicio": "2026-11-02T22:51:37.960Z",
+    "expiraEm": "2026-12-03T22:51:37.960Z",
+    "linkGrupo": "",
+    "comprador": "556399215379@s.whatsapp.net",
+    "ultimoComprador": "556399215379@s.whatsapp.net",
+    "ultimaAtualizacao": "2026-11-02T22:51:37.961Z"
+  },
+  {
+    "id": "120363408565034928@g.us",
+    "ativo": true,
+    "planoNome": "Manual",
+    "duracaoDias": 18.208333333333336,
+    "inicio": "2026-11-03T23:58:33.252Z",
+    "expiraEm": "2026-11-26T01:57:22.786Z",
+    "linkGrupo": "",
+    "comprador": "556399215379@s.whatsapp.net",
+    "ultimoComprador": "556399215379@s.whatsapp.net",
+    "ultimaAtualizacao": "2026-11-19T01:57:22.786Z",
+    "expiradoEm": "2026-11-18T21:26:39.399Z"
+  }
+]
